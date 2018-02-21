@@ -8,9 +8,9 @@ bar.addEventListener('mouseover', ()=>{
         bar.children[i].style.visibility = "visible";
         bar.style.transition = "all 1s";
     };
-    bar.style.minWidth = "20%";
+    bar.style.minWidth = "250px";
     bar.firstElementChild.style.display = "none";
-    content.style.paddingLeft = "20%";
+    content.style.paddingLeft = "250px";
 });
 bar.addEventListener('mouseout', ()=>{
     
