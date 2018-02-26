@@ -1,27 +1,27 @@
-//ruchome menu--------------------------
-let bar = document.querySelector('#bar');
-let content = document.querySelector('.content');
+let ham = document.querySelector('.hamburger-a');
+let navbar = document.querySelector('.nav-a');
 
-
-bar.addEventListener('mouseover', ()=>{ 
-    for(let i=1; i<bar.children.length; i++){
-        bar.children[i].style.visibility = "visible";
-        bar.style.transition = "all 1s";
-    };
-    bar.style.minWidth = "250px";
-    bar.firstElementChild.style.display = "none";
-    content.style.paddingLeft = "250px";
-});
-bar.addEventListener('mouseout', ()=>{
-    
-    bar.style.width = "50px";
-    bar.style.minWidth = "50px";
-    bar.style.backgroundColor = "rgba(0, 0, 0, 0.00)";
-    for(let i=1; i<bar.children.length; i++){
-        bar.children[i].style.visibility = "hidden";
-        bar.style.transition = "all 1s linear";
+function visibility(){
+    if(navbar.style.visibility == "" || navbar.style.visibility == "hidden"){
+        navbar.style.visibility = "visible"; 
+    }else{
+        navbar.style.visibility = "hidden";
     }
-    bar.firstElementChild.style.display = "block";
-    content.style.paddingLeft = "50px";
+}
+
+function big(){
+    navbar.style.visibility = "visible";
+}
+
+
+
+var mobileViewport = window.matchMedia("screen and (max-width: 700px)");
+mobileViewport.addListener(function(mq) {
+ 
+    if(mq.matches) {
+        navbar.style.visibility = "hidden";
+        ham.addEventListener('click', visibility);
+    } else {
+        big();
+    }
 });
-//-----------------------portfolio menu
